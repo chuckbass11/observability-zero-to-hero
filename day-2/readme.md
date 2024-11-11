@@ -123,6 +123,9 @@ kubectl get all -n monitoring
 - **Prometheus UI**:
 ```bash
 kubectl port-forward service/prometheus-operated -n monitoring 9090:9090
+
+sudo netstat -tuln | grep 9090
+verify if prometheus server is listening from all sources. 
 ```
 
 **NOTE:** If you are using an EC2 Instance or Cloud VM, you need to pass `--address 0.0.0.0` to the above command. Then you can access the UI on <instance-ip:port>
